@@ -5,6 +5,7 @@ using UnityEngine.EventSystems;
 
 public class PlayerMovment : MonoBehaviour
 {
+    public InventoryObject inventory;
     //speed variables 
     public float moveSpeed;
     public float groundDrag;
@@ -93,5 +94,20 @@ public class PlayerMovment : MonoBehaviour
     private void ResetJump()
     {
         readyToJump = true;
+    }
+
+    public void OnTriggerEnter(Collider other)
+    {
+        var item = other.GetComponent<Item>();
+        if(item)
+        {
+            inventory.addItem(item.item, 1);
+            Destroy(other.gameObject);
+        }
+    }
+
+    public void OnApplicationQuit()
+    {
+        inventory.Container.Clear();
     }
 }
