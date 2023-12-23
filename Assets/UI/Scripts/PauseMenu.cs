@@ -7,6 +7,7 @@ public class PauseMenu : MonoBehaviour
 {
     public GameObject pauseMenu;
     public GameObject Crosshair;
+    public GameObject InventoryScreen;
     public bool isPaused;
 
     // Start is called before the first frame update
@@ -14,6 +15,7 @@ public class PauseMenu : MonoBehaviour
     {
         pauseMenu.SetActive(false);
         Crosshair.SetActive(true);
+        InventoryScreen.SetActive(false);
     }
 
     // Update is called once per frame
@@ -38,6 +40,7 @@ public class PauseMenu : MonoBehaviour
         Time.timeScale = 0f;
         isPaused = true;
         Crosshair.SetActive(false);
+        InventoryScreen.SetActive(true);
     }
 
     public void ResumeGame()
@@ -46,6 +49,7 @@ public class PauseMenu : MonoBehaviour
         Time.timeScale = 1f;
         isPaused = false;
         Crosshair.SetActive(true);
+        InventoryScreen.SetActive(false);
     }
 
     public void MainMenu()
