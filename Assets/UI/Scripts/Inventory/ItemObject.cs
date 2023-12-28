@@ -2,6 +2,7 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 
+//Item list which is infintly exapndable 
 public enum Itemtype
 {
     Materials,
@@ -9,6 +10,7 @@ public enum Itemtype
     Book,
     Default
 }
+//Creates description box and sets item type for prefabs 
 public abstract class ItemObject : ScriptableObject
 {
     public GameObject Prefab;

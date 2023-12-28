@@ -4,7 +4,9 @@ using UnityEngine;
 
 public class OnKeyPress : MonoBehaviour
 {
+    //GameObj variable 
     public GameObject InventoryMenu;
+    //shown or not show bool variable 
     public bool isShown;
 
     // Start is called before the first frame update
@@ -28,13 +30,13 @@ public class OnKeyPress : MonoBehaviour
             }
         }
     }
-
+    //sets the bool and visual obj to true 
     public void Show()
     { 
         InventoryMenu.SetActive(true);
         isShown = true;
     }
-
+    //sets the bool and visual obj to false 
     public void Hide()
     {
         InventoryMenu.SetActive(false);
