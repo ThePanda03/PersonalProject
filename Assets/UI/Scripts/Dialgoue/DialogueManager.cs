@@ -25,21 +25,25 @@ public class DialogueManager : MonoBehaviour
     {
         animator.SetBool("IsOpen", true);
 
-        Debug.Log("Starting Convo with" + dialogue.name);
         sentances.Clear();
 
         nameText.text = dialogue.name;
 
-        foreach (string sentance in dialogue.sentances) 
+        foreach (string sentance in dialogue.sentances)
         {
             sentances.Enqueue(sentance);
         }
-        
+
+
+    }
+
+    public void Update()
+    {
         if (Input.GetKeyDown(KeyCode.Return))
         {
+            Debug.Log("iaowdjoiawj");
             DisplayNext();
         }
-
     }
     //Displays the next peice of dialogue in the que until it is finished 
     public void DisplayNext()
@@ -51,7 +55,19 @@ public class DialogueManager : MonoBehaviour
         }
 
         string sentance = sentances.Dequeue();
-        dialogueText.text = sentance;
+        StopAllCoroutines();
+        StartCoroutine(TypeSentence(sentance));
+
+    }
+
+    IEnumerator TypeSentence(string sentence)
+    {
+        dialogueText.text = "";
+        foreach (char letter in sentence.ToCharArray())
+        {
+            dialogueText.text += letter;
+            yield return null;
+        }
     }
 
     //Gets rid of the dialgoue screen when the conversation is ended 

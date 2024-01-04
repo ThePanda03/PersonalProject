@@ -29,7 +29,7 @@ public class PlayerMovment : MonoBehaviour
     Rigidbody rb;
     //Event trigger
     public UnityEvent onTriggerEnter = new UnityEvent();
-
+    public Dialoguetrigger trig;
     // Start is called before the first frame update
     private void Start()
     {
@@ -105,10 +105,11 @@ public class PlayerMovment : MonoBehaviour
         if(item)
         {
             inventory.addItem(item.item, 1);
-            Destroy(other.gameObject);
+            //Destroy(other.gameObject);
+            other.gameObject.SetActive(false);
         }
         //triggers Dialogue when etering a collider
-        if (other.CompareTag("Player")) onTriggerEnter.Invoke();
+        trig.TriggerDialogue();
     }
 
     public void OnApplicationQuit()
