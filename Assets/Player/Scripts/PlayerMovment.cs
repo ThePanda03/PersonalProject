@@ -1,6 +1,7 @@
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using UnityEngine.Events;
 using UnityEngine.EventSystems;
 
 public class PlayerMovment : MonoBehaviour
@@ -26,6 +27,8 @@ public class PlayerMovment : MonoBehaviour
     Vector3 moveDirection;
     //rigidbody variable
     Rigidbody rb;
+    //Event trigger
+    public UnityEvent onTriggerEnter = new UnityEvent();
 
     // Start is called before the first frame update
     private void Start()
@@ -104,6 +107,8 @@ public class PlayerMovment : MonoBehaviour
             inventory.addItem(item.item, 1);
             Destroy(other.gameObject);
         }
+        //triggers Dialogue when etering a collider
+        if (other.CompareTag("Player")) onTriggerEnter.Invoke();
     }
 
     public void OnApplicationQuit()

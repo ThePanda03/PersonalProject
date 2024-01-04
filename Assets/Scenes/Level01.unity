@@ -38,7 +38,7 @@ RenderSettings:
   m_ReflectionIntensity: 1
   m_CustomReflection: {fileID: 0}
   m_Sun: {fileID: 0}
-  m_IndirectSpecularColor: {r: 0.33846486, g: 0.60272634, b: 0.71701425, a: 1}
+  m_IndirectSpecularColor: {r: 0.3384654, g: 0.60273105, b: 0.71701455, a: 1}
   m_UseRadianceAmbientProbe: 0
 --- !u!157 &3
 LightmapSettings:
@@ -2307,6 +2307,7 @@ GameObject:
   - component: {fileID: 308170536}
   - component: {fileID: 308170535}
   - component: {fileID: 308170534}
+  - component: {fileID: 308170539}
   m_Layer: 5
   m_Name: DialogueBox
   m_TagString: Untagged
@@ -2333,7 +2334,7 @@ RectTransform:
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0, y: 0}
   m_AnchorMax: {x: 1, y: 1}
-  m_AnchoredPosition: {x: 0, y: -327}
+  m_AnchoredPosition: {x: 0, y: -285}
   m_SizeDelta: {x: -871.8413, y: -748.332}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!114 &308170534
@@ -2437,6 +2438,27 @@ Canvas:
   m_SortingLayerID: 0
   m_SortingOrder: 0
   m_TargetDisplay: 0
+--- !u!95 &308170539
+Animator:
+  serializedVersion: 5
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 308170532}
+  m_Enabled: 1
+  m_Avatar: {fileID: 0}
+  m_Controller: {fileID: 9100000, guid: 28e653a67347bad439bb03ccb02ebdb1, type: 2}
+  m_CullingMode: 0
+  m_UpdateMode: 0
+  m_ApplyRootMotion: 0
+  m_LinearVelocityBlending: 0
+  m_StabilizeFeet: 0
+  m_WarningMessage: 
+  m_HasTransformHierarchy: 1
+  m_AllowConstantClipSamplingOptimization: 1
+  m_KeepAnimatorStateOnDisable: 0
+  m_WriteDefaultValuesOnDisable: 0
 --- !u!1001 &314898997
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -3122,6 +3144,7 @@ MonoBehaviour:
     - 'The storys detail a sling of grousome murders '
     - It details Every murdour in great detail down to the last minute detail
     - 'Some even beleive it was made by the ghostly murderour who was never caught '
+    - 'You Should try to explore more maybe around the park or the tavern '
 --- !u!1 &396362884
 GameObject:
   m_ObjectHideFlags: 0
@@ -3153,6 +3176,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   nameText: {fileID: 1991009106}
   dialogueText: {fileID: 155496746}
+  animator: {fileID: 308170539}
 --- !u!4 &396362886
 Transform:
   m_ObjectHideFlags: 0
